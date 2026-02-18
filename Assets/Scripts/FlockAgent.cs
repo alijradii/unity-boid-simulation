@@ -1,6 +1,5 @@
 using UnityEngine;
 
-[RequireComponent(typeof(Collider2D))]
 [RequireComponent(typeof(Rigidbody2D))]
 public class FlockAgent : MonoBehaviour
 {
@@ -11,6 +10,7 @@ public class FlockAgent : MonoBehaviour
     Rigidbody2D rb;
     void Awake() {
         rb = GetComponent<Rigidbody2D>();
+        agentCollider = GetComponent<Collider2D>();
     }
 
     public void Initialize(Flock flock) {
@@ -19,7 +19,6 @@ public class FlockAgent : MonoBehaviour
 
     void Start()
     {
-        agentCollider = GetComponent<Collider2D>();
 
         var linearVelocity = Random.insideUnitCircle.normalized * 10f;
 

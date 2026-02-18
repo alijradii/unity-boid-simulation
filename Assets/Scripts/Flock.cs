@@ -12,9 +12,7 @@ public class Flock: MonoBehaviour
 
 
     [Range(10, 500)]
-    public int startingPopulationSize = 250;
-    public const float  agentDensity = 0.08f;
-
+    public int startingPopulationSize = 10;
 
     [Range(1f, 100f)]
     public float driveFactor = 15f;
@@ -40,7 +38,7 @@ public class Flock: MonoBehaviour
             );
 
             agent.Initialize(this);
-            agent.name = "Agent " + (i + 1);
+            agent.name = "Agent " + i;
         }
     }
 }
